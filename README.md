@@ -1,1 +1,12 @@
-# Lilo
+Question 1: 
+
+    This solution follows a straightforward approach: it reads each row from the CSV file and processes it to find the combination of numbers whose sum is closest to the target number (the first value in the row) without exceeding it. Based on the problem statement, we understand that the first number in each row is the target, and the rest are the available small numbers. To ensure no possible combination is missed, a dedicated function is created that takes the target number and the array of small numbers, and evaluates all potential subsets.
+
+    The main advantage of this approach is its accuracy—it guarantees the correct result because it exhaustively checks all combinations. However, it also comes with limitations. Since it tries every possible combination, it doesn't scale well for large datasets. It may lead to performance and memory issues, and it's not suitable for streaming scenarios, as it requires access to the complete row before processing.
+
+
+Question 2: 
+
+    In the question, it wasn’t entirely clear how the itemNumber from Newegg.com should be mapped to products on other platforms like Amazon or other. From my understanding, the itemNumber in Newegg refers to a specific product ID, but such direct mapping doesn’t exist across different e-commerce platforms. While one possible approach would be to fetch the product name from Newegg using the itemNumber and then use that name as a search keyword on Amazon or other, this adds significant complexity. To keep the solution simple and focused on the core task, I demonstrated my web scraping skills by using the search functionality of each platform. The keyword is used to construct search URLs for Newegg, Amazon, and other platform, and the price of the first visible product on each site is retrieved. This avoids cross-platform mapping challenges while still effectively showcasing how to extract real-time pricing data from multiple sources.
+
+    I experimented with different libraries and implemented the ones that worked best in practice. One of the main challenges in this task was that Newegg employs strong security mechanisms to prevent scraping, including detecting and blocking automated access from the same device. This caused repeated failures while trying to scrape data from Newegg. Similar issues were observed with Amazon due to its anti-bot protections, although it worked successfully most of the time with appropriate handling. To demonstrate the scraping functionality more reliably, I also included Meesho where scraping based on a keyword search works well. This allowed me to show that keyword-based price scraping is feasible and effective across platforms that are less aggressively protected.
